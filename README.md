@@ -55,7 +55,7 @@ if (fileToWrite.exists()) {
 
 This is an implementation of `SharedPreferences` that encrypts keys and values. If your application needs to save Key-value pairs - such as API keys - Android provides the *EncryptedSharedPreferences* class, which uses the same SharedPreferences interface that you’re used to.
 
-Both keys and values are encrypted. Keys are encrypted using `AES256-SIV-CMAC`, which provides a deterministic cipher text; values are encrypted with `AES256-GCM` and are bound to the encrypted key. This scheme allows the key data to be encrypted safely, while still allowing lookups.
+Both keys and values are encrypted. Keys are encrypted using [AES256-SIV-CMAC](https://datatracker.ietf.org/doc/html/rfc5297), which provides a deterministic cipher text; values are encrypted with `AES256-GCM` and are bound to the encrypted key. This scheme allows the key data to be encrypted safely, while still allowing lookups.
 
 **Reference**: `androidx.security.crypto`
 
