@@ -70,8 +70,8 @@ Second, we create the shared preferences file.
 ```kotlin
 val sharePreferences = EncryptedSharedPreferences.create(
         context,
-        "MY_SHARED_PREFS",
-        getMasterKey(context),
+        "Share_preferences",
+        masterKey,
         EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
         EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
     )
@@ -82,7 +82,7 @@ Finally, we can write or read the file as we normally would.
 ```kotlin
 // writing
 sharePreferences.edit().apply {
-        putBoolean("kEY", false)
+        putBoolean("KEY", false)
         apply()
         Log.d(TAG, "Encrypted SharePreferences - Written successfully")
     }
